@@ -18,6 +18,9 @@
             padding: 0;
             background-attachment: fixed;
             min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
             font-family: "DM Sans", "Inter", sans-serif;
         }
 
@@ -55,12 +58,26 @@
             font-weight: 700;
             text-align: center;
             z-index: 2;
-            font-size: 2rem;
+            font-size: clamp(2.4rem, 7vw, 5.2rem);
+            letter-spacing: -0.04em;
+            line-height: 1.07;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            background: linear-gradient(135deg, #a5b4fc, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero h2 {
             font-size: 1.8rem;
             color: var(--cinza-claro);
+        }
+
+        .hero span {
+            color: var(--azul-claro);
         }
 
         .logo {
@@ -115,6 +132,9 @@
             display: flex;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
+            flex: 1;
+            padding: 40px 20px;
+            flex-wrap: wrap;
         }
 
         @media (max-width: 768px) {
@@ -231,6 +251,35 @@
             left: 0;
             z-index: -1;
         }
+
+        footer {
+            background: var(--azul-principal);
+            backdrop-filter: blur(10px);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        footer p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        footer img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            object-fit: contain;
+        }
     </style>
 </head>
 
@@ -249,7 +298,9 @@
         </nav>
     </header>
     <div class="hero">
-        <H1>Calhas, coifas e rufos.</H1>
+        <H1>Calhas, coifas,
+            <br>e <span>rufos</span> sob medida.
+        </h1>
         <h2>Melhor preço de Belo Horizonte, cobrimos qualquer orçamento.</h2>
     </div>
     <h2>Nossos produtos</h2>
@@ -262,9 +313,9 @@
         <div class="menu">
             <p>Tubulações</p>
             <div class="slider">
-                <div class="slides">   
-                    <img src = "imagens/tubulacao2.png">
-                    <img src = "imagens/tubulacao3.png">
+                <div class="slides">
+                    <img src="imagens/tubulacao2.png">
+                    <img src="imagens/tubulacao3.png">
                     <img src="imagens/06b6548f-ab7f-4875-8bc0-f927872c195f.png">
                 </div>
             </div>
@@ -274,7 +325,7 @@
             <p>Calhas </p>
             <div class="slider">
                 <div class="slides">
-                    <img src = "imagens/calhas2.png">
+                    <img src="imagens/calhas2.png">
                     <img src="imagens/calhas-nova.png">
                     <img src="imagens/6dc7937a-d4c6-45aa-a5bd-f17d70439957.png">
                 </div>
@@ -296,13 +347,18 @@
             <p>Rufos</p>
             <div class="slider">
                 <div class="slides">
-                    <img src = "imagens/rufos1.png">
+                    <img src="imagens/rufos1.png">
                     <img src="imagens/rufo02.jpg" style="border-radius: 20px;">
-                    <img src = "imagens/rufos3.png">
+                    <img src="imagens/rufos3.png">
                 </div>
             </div>
         </div>
     </main>
+
+    <footer>
+        <p><img src="imagens/loc.png">Av. Saramenha 610, Guarani, Belo Horizonte</p>
+        <p><img src="imagens/telefone.png">Telefone: (31) 98592-9831</p>
+    </footer>
 </body>
 
 </html>
@@ -324,14 +380,14 @@
             x: Math.random() * W,
             y: initial ? Math.random() * H : -20,
 
-            len: Math.random() * 25 + 15,     // um pouco maior
-            speed: Math.random() * 6 + 8,     // MAIS rápido
+            len: Math.random() * 25 + 15,
+            speed: Math.random() * 6 + 8,
 
             width: Math.random() * 1.2 + 0.6,
             alpha: Math.random() * 0.5 + 0.4,
 
-            dx: Math.random() * 0.4 - 0.2,    // quase reto (bem menos inclinado)
-            dy: Math.random() * 6 + 10        // cai mais rápido pra baixo
+            dx: Math.random() * 0.4 - 0.2,
+            dy: Math.random() * 6 + 10
         };
     }
 
