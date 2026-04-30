@@ -98,7 +98,7 @@
 }
 
 :root {
-  --azul-principal: #0A3D62;   /*fundo */
+  --azul-principal: rgb(10, 61, 98, 0.7); /*fundo */
   --azul-secundario: #1B6CA8;  /* destaque */
   --azul-claro: #4DA3D9;       /* hover / detalhes */
 
@@ -107,5 +107,5 @@
   --cinza-medio: #2E3640;      /* bordas / separação */
 
   --branco: #FFFFFF;           /* títulos */
-  --cinza-claro: #C7D0D9;      /* textos */
+  --cinza-claro: #c7cbd9;      /* textos */
 }

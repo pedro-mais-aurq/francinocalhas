@@ -12,7 +12,7 @@
 
     <style>
         body {
-            background: linear-gradient(135deg, #0A3D62, #000);
+            background: linear-gradient(135deg, #141414, #141414);
             background-repeat: no-repeat;
             margin: 0;
             padding: 0;
@@ -22,7 +22,7 @@
         }
 
         header {
-            background: var(--cinza-escuro);
+            background: var(--azul-principal);
             backdrop-filter: blur(10px);
             background-position: center;
             background-size: cover;
@@ -40,7 +40,7 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, rgba(10, 61, 98, 0.4), rgba(0, 0, 0, 0.8)), url("imagens/header.jpg");
+            background: linear-gradient(135deg, rgba(2, 2, 2, 0.4), rgba(0, 0, 0, 0.8)), url("imagens/home-hd-calhas.jpg");
             background-position: 1% 90%;
             background-repeat: no-repeat;
             background-size: cover;
@@ -60,7 +60,7 @@
 
         .hero h2 {
             font-size: 1.8rem;
-            color: var(--cinza-claro)
+            color: var(--cinza-claro);
         }
 
         .logo {
@@ -109,6 +109,128 @@
         nav a:hover::after {
             width: 100%;
         }
+
+        main {
+            justify-content: center;
+            display: flex;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 0 20px;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+        }
+
+        .menu {
+            background: linear-gradient(135deg, rgb(30, 58, 95, 0.7), rgb(43, 92, 138, 0.9));
+            flex: 1 1 18.75rem;
+            max-width: 30rem;
+            min-height: 25rem;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            border-radius: 1.25rem;
+            overflow: hidden;
+            padding: 1.5rem;
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu img {
+            width: 100%;
+            height: 290px;
+            object-fit: cover;
+            border-radius: 0.75rem;
+        }
+
+        .menu p {
+            text-align: center;
+            color: white;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .slider {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            position: relative;
+        }
+
+        .slides {
+            display: flex;
+            width: 300%;
+            animation: slide3 9s infinite;
+        }
+
+        .slides img {
+            width: calc(100% / 3);
+            height: 290px;
+            object-fit: cover;
+            border-radius: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        @keyframes slide3 {
+            0% {
+                transform: translateX(0%);
+            }
+
+            30% {
+                transform: translateX(0%);
+            }
+
+            35% {
+                transform: translateX(-33.333%);
+            }
+
+            65% {
+                transform: translateX(-33.333%);
+            }
+
+            70% {
+                transform: translateX(-66.666%);
+            }
+
+            95% {
+                transform: translateX(-66.666%);
+            }
+
+            100% {
+                transform: translateX(0%);
+            }
+        }
+
+        #rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
     </style>
 </head>
 
@@ -130,8 +252,122 @@
         <H1>Calhas, coifas e rufos.</H1>
         <h2>Melhor preço de Belo Horizonte, cobrimos qualquer orçamento.</h2>
     </div>
+    <h2>Nossos produtos</h2>
+
+    <canvas id="rain"></canvas>
+
+    <main>
 
 
+        <div class="menu">
+            <p>Tubulações</p>
+            <div class="slider">
+                <div class="slides">   
+                    <img src = "imagens/tubulacao2.png">
+                    <img src = "imagens/tubulacao3.png">
+                    <img src="imagens/06b6548f-ab7f-4875-8bc0-f927872c195f.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="menu">
+            <p>Calhas </p>
+            <div class="slider">
+                <div class="slides">
+                    <img src = "imagens/calhas2.png">
+                    <img src="imagens/calhas-nova.png">
+                    <img src="imagens/6dc7937a-d4c6-45aa-a5bd-f17d70439957.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="menu">
+            <p>Coifas</p>
+            <div class="slider">
+                <div class="slides">
+                    <img src="imagens/coifa02.jpg" alt="Coifa 1">
+                    <img src="imagens/coifa04.jpg" alt="Coifa 2">
+                    <img src="imagens/coifa03.png" alt="Coifa 3">
+                </div>
+            </div>
+        </div>
+
+        <div class="menu">
+            <p>Rufos</p>
+            <div class="slider">
+                <div class="slides">
+                    <img src = "imagens/rufos1.png">
+                    <img src="imagens/rufo02.jpg" style="border-radius: 20px;">
+                    <img src = "imagens/rufos3.png">
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
+
+<script>
+    const canvas = document.getElementById("rain");
+    const ctx = canvas.getContext("2d");
+
+    let W = window.innerWidth;
+    let H = window.innerHeight;
+
+    canvas.width = W;
+    canvas.height = H;
+
+    let drops = [];
+
+    function makeRaindrop(initial = true) {
+        return {
+            x: Math.random() * W,
+            y: initial ? Math.random() * H : -20,
+
+            len: Math.random() * 25 + 15,     // um pouco maior
+            speed: Math.random() * 6 + 8,     // MAIS rápido
+
+            width: Math.random() * 1.2 + 0.6,
+            alpha: Math.random() * 0.5 + 0.4,
+
+            dx: Math.random() * 0.4 - 0.2,    // quase reto (bem menos inclinado)
+            dy: Math.random() * 6 + 10        // cai mais rápido pra baixo
+        };
+    }
+
+    for (let i = 0; i < 150; i++) {
+        drops.push(makeRaindrop());
+    }
+
+    function drawRain() {
+        ctx.save();
+        drops.forEach(d => {
+            ctx.globalAlpha = d.alpha;
+            ctx.strokeStyle = '#a8ccee';
+            ctx.lineWidth = d.width;
+            ctx.beginPath();
+            ctx.moveTo(d.x, d.y);
+            ctx.lineTo(
+                d.x - d.dx * (d.len / d.speed),
+                d.y - d.dy * (d.len / d.speed)
+            );
+            ctx.stroke();
+
+            d.x += d.dx;
+            d.y += d.dy;
+
+            if (d.y > H + 20) {
+                Object.assign(d, makeRaindrop(false));
+            }
+        });
+        ctx.restore();
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, W, H);
+        drawRain();
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+</script>
