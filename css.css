@@ -98,14 +98,25 @@
 }
 
 :root {
-  --azul-principal: rgb(10, 61, 98, 0.7); /*fundo */
-  --azul-secundario: #1B6CA8;  /* destaque */
-  --azul-claro: #4DA3D9;       /* hover / detalhes */
+    --azul-principal: rgb(10, 61, 98, 0.7);
+    /*fundo */
+    --azul-secundario: #1B6CA8;
+    /* destaque */
+    --azul-claro: #4DA3D9;
+    /* hover / detalhes */
 
-  --preto: #0B0F14;            /* fundo principal */
-  --cinza-escuro: rgb(26, 31, 38, 0.8);     /* cards / header */
-  --cinza-medio: #2E3640;      /* bordas / separação */
+    --preto: #0B0F14;
+    /* fundo principal */
+    --cinza-escuro: rgb(26, 31, 38, 0.8);
+    /* cards / header */
+    --cinza-medio: #2E3640;
+    /* bordas / separação */
 
-  --branco: #FFFFFF;           /* títulos */
-  --cinza-claro: #c7cbd9;      /* textos */
+    --branco: #FFFFFF;
+    /* títulos */
+    --cinza-claro: #c7cbd9;
+    /* textos */
+
+
+    --border: rgba(255, 255, 255, 0.08);
 }
