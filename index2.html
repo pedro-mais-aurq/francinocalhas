@@ -54,7 +54,7 @@
             background-position: 1% 90%;
             background-repeat: no-repeat;
             background-size: cover;
-            min-height: 100vh;
+            min-height: 80vh;
             padding-top: 80px;
             align-content: center;
         }
@@ -195,12 +195,21 @@
         main {
             justify-content: center;
             display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 2%;
+            grid-template-columns: 1fr;
+            gap: 5%;
             flex: 1;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            max-width: 200vh;
+            padding: 40px 100px;
+            flex-wrap: wrap;
+            max-width: 1000px;
             margin: 0 auto;
+        }
+
+        .menu:nth-child(odd) {
+            justify-self: start;
+        }
+
+        .menu:nth-child(even) {
+            justify-self: end;
         }
 
         @media (max-width: 768px) {
@@ -223,6 +232,14 @@
             main {
                 grid-template-columns: 1fr;
             }
+
+            main {
+                grid-template-columns: 1fr;
+            }
+
+            .menu {
+                justify-self: center !important;
+            }
         }
 
         section h2 {
@@ -232,7 +249,7 @@
             line-height: 1.15;
             color: #fff;
             max-width: 640px;
-            margin-inline-start: 3.7%;
+            margin-inline-start: 17.5%;
             margin-bottom: 0;
             margin-top: 0;
         }
@@ -252,6 +269,7 @@
             line-height: 1.15;
             color: #fff;
             max-width: 640px;
+            margin-inline-start: 17.5%;
             margin-bottom: 0.7%;
             font-family: 'Outfit', sans-serif;
         }
@@ -263,16 +281,18 @@
             font-size: clamp(0.8rem, 1.8vw, 1rem);
             margin-top: 0;
             margin-bottom: 1%;
-            margin-left: 3.7%;
-            margin-right: 3.7%;
+            margin-left: 17.5%;
+            margin-right: 17.5%;
             text-align: left;
         }
 
 
         .menu {
             background: linear-gradient(135deg, rgb(30, 58, 95, 0.7), rgb(43, 92, 138, 0.9));
-            min-width: 0;
-            min-height: 15rem;
+            max-width: 60rem;
+            min-height: 45rem;
+            max-width: 50rem;
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -293,10 +313,9 @@
 
         .menu img {
             width: 100%;
-            height: 290px;
+            height: 70%;
             position: relative;
             object-fit: cover;
-
         }
 
         .menu h3 {
@@ -314,7 +333,6 @@
             color: var(--cinza-claro);
             font-size: clamp(1rem, 2vw, 1.2rem);
             margin-top: -2%;
-            margin-bottom: 5%;
             margin-left: 5%;
             text-align: left;
             margin-right: 10%;
@@ -400,28 +418,15 @@
             background: linear-gradient(var(--azul-claro), rgb(22, 94, 189));
             width: 62%;
             height: 1px;
+            margin-left: 17.5%;
         }
 
         .descricao {
-            background-image: linear-gradient(135deg, rgb(0, 0, 0, 0.7), rgb(1, 1, 1, 0.7)), url(imagens/logo2.jpg)  ;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 5%;
-            padding: 3.7%;
+            padding: 50px 11%;
             align-items: center;
-            margin-top: 10vh;
-            margin-bottom: 10vh;
-            min-height: 75vh;        
-            align-items: flex-start;
-        }
-
-        .descricao p,
-        .descricao h2 {
-            margin: auto;
-            margin-inline-start: 0;
         }
 
         #empresa .menu {
@@ -564,8 +569,8 @@
                 <h4>A empresa</h4>
                 <h2>Francino Calhas</h2>
                 <div class="traco"></div>
-                <p>Entramos há <strong>10 anos</strong> no mercado para fazer a diferença e<br>
-                    <strong>profissionalizar</strong> o segmento.<br>
+                <p>Entramos há <strong>10 anos</strong> no mercado para fazer a diferença e
+                    <strong>profissionalizar</strong><br> o segmento.<br>
                     Somos uma empresa <strong>totalmente</strong> dedicada a oferecer <strong>soluções</strong><br>
                     sob
                     <strong>medida</strong> para nossos clientes,
@@ -575,6 +580,10 @@
                     Buscamos identificar e resolver <strong>problemas</strong>,<br> <strong>superando as
                         expectativas</strong> de nossos clientes.
                 </p>
+            </div>
+
+            <div class="menu">
+                <img src="imagens/logo2.jpg">
             </div>
 
         </div>
@@ -588,68 +597,3 @@
 </body>
 
 </html>
-
-<script>
-    const canvas = document.getElementById("rain");
-    const ctx = canvas.getContext("2d");
-
-    let W = window.innerWidth;
-    let H = window.innerHeight;
-
-    canvas.width = W;
-    canvas.height = H;
-
-    let drops = [];
-
-    function makeRaindrop(initial = true) {
-        return {
-            x: Math.random() * W,
-            y: initial ? Math.random() * H : -20,
-
-            len: Math.random() * 25 + 15,
-            speed: Math.random() * 6 + 8,
-
-            width: Math.random() * 1.2 + 0.6,
-            alpha: Math.random() * 0.5 + 0.4,
-
-            dx: Math.random() * 0.4 - 0.2,
-            dy: Math.random() * 6 + 10
-        };
-    }
-
-    for (let i = 0; i < 150; i++) {
-        drops.push(makeRaindrop());
-    }
-
-    function drawRain() {
-        ctx.save();
-        drops.forEach(d => {
-            ctx.globalAlpha = d.alpha;
-            ctx.strokeStyle = '#a8ccee';
-            ctx.lineWidth = d.width;
-            ctx.beginPath();
-            ctx.moveTo(d.x, d.y);
-            ctx.lineTo(
-                d.x - d.dx * (d.len / d.speed),
-                d.y - d.dy * (d.len / d.speed)
-            );
-            ctx.stroke();
-
-            d.x += d.dx;
-            d.y += d.dy;
-
-            if (d.y > H + 20) {
-                Object.assign(d, makeRaindrop(false));
-            }
-        });
-        ctx.restore();
-    }
-
-    function animate() {
-        ctx.clearRect(0, 0, W, H);
-        drawRain();
-        requestAnimationFrame(animate);
-    }
-
-    animate();
-</script>
