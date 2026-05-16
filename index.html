@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-
         html {
             scroll-behavior: smooth;
         }
@@ -119,7 +118,7 @@
 
         /* ── HERO ────────────────────────────────────────────── */
         #inicio {
-            display: contents;
+            padding: 0;
         }
 
         .hero {
@@ -601,8 +600,8 @@
 
         <nav id="main-nav">
             <a href="#inicio">Início</a>
-            <a href="#servico">Serviços</a>
             <a href="#empresa">A empresa</a>
+            <a href="#servico">Serviços</a>
             <a href="https://wa.me/553185929831" target="_blank" rel="noopener noreferrer">Contato</a>
         </nav>
 
@@ -756,64 +755,6 @@
             link.addEventListener('click', () => nav.classList.remove('open'));
         });
 
-        // Rain canvas (kept from original, only runs if canvas exists)
-        const canvas = document.getElementById("rain");
-        if (canvas) {
-            const ctx = canvas.getContext("2d");
-
-            let W = window.innerWidth;
-            let H = window.innerHeight;
-
-            canvas.width = W;
-            canvas.height = H;
-
-            let drops = [];
-
-            function makeRaindrop(initial = true) {
-                return {
-                    x: Math.random() * W,
-                    y: initial ? Math.random() * H : -20,
-                    len: Math.random() * 25 + 15,
-                    speed: Math.random() * 6 + 8,
-                    width: Math.random() * 1.2 + 0.6,
-                    alpha: Math.random() * 0.5 + 0.4,
-                    dx: Math.random() * 0.4 - 0.2,
-                    dy: Math.random() * 6 + 10
-                };
-            }
-
-            for (let i = 0; i < 150; i++) drops.push(makeRaindrop());
-
-            function drawRain() {
-                ctx.save();
-                drops.forEach(d => {
-                    ctx.globalAlpha = d.alpha;
-                    ctx.strokeStyle = '#a8ccee';
-                    ctx.lineWidth = d.width;
-                    ctx.beginPath();
-                    ctx.moveTo(d.x, d.y);
-                    ctx.lineTo(d.x - d.dx * (d.len / d.speed), d.y - d.dy * (d.len / d.speed));
-                    ctx.stroke();
-                    d.x += d.dx;
-                    d.y += d.dy;
-                    if (d.y > H + 20) Object.assign(d, makeRaindrop(false));
-                });
-                ctx.restore();
-            }
-
-            function animate() {
-                ctx.clearRect(0, 0, W, H);
-                drawRain();
-                requestAnimationFrame(animate);
-            }
-
-            animate();
-
-            window.addEventListener('resize', () => {
-                W = canvas.width = window.innerWidth;
-                H = canvas.height = window.innerHeight;
-            });
-        }
     </script>
 </body>
 
