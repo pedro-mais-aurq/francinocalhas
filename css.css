@@ -119,4 +119,25 @@
 
 
     --border: rgba(255, 255, 255, 0.08);
+
+
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2.5rem;
+    --space-xl: 4rem;
+    --space-2xl: 6rem;
+
+    --radius-sm: 0.75rem;
+    --radius-md: 1.25rem;
+    --radius-lg: 1.75rem;
+
+    --container-max: 1280px;
+    --container-pad: clamp(1.25rem, 5vw, 3rem);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
