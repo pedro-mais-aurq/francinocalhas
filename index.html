@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Francino Calhas</title>
-    <link rel="stylesheet" href="css.css">
+    <title>Francino</title>
+    <link rel="stylesheet" href="css/css.css">
     <meta property="og:image"
         content="https://francinocalhas.com.br/wp-content/uploads/2023/04/francino-calhas-logo.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="imagens/francino-calhas-logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="imagens/logo2.png">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
@@ -29,20 +29,7 @@
         }
 
         /* ── HEADER ─────────────────────────────────────────── */
-        header {
-            background: var(--azul-principal);
-            backdrop-filter: blur(10px);
-            top: 0;
-            width: 100%;
-            height: 72px;
-            position: fixed;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 var(--container-pad);
-            z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        }
+
 
         .logo {
             display: flex;
@@ -55,119 +42,15 @@
             flex-shrink: 0;
         }
 
-        .logo img {
-            height: 36px;
-            width: auto;
-        }
 
-        nav {
-            display: flex;
-            align-items: center;
-            gap: clamp(16px, 3vw, 36px);
-        }
 
-        nav a {
-            text-decoration: none;
-            color: var(--cinza-claro);
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-            position: relative;
-            white-space: nowrap;
-        }
 
-        nav a::after {
-            content: "";
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--azul-claro);
-            transition: width 0.25s;
-            border-radius: 2px;
-        }
-
-        nav a:hover {
-            color: white;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* hamburger */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 4px;
-            background: none;
-            border: none;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 22px;
-            height: 2px;
-            background: white;
-            border-radius: 2px;
-            transition: all 0.3s;
-        }
 
         /* ── HERO ────────────────────────────────────────────── */
         #inicio {
             padding: 0;
         }
 
-        .hero {
-            background: linear-gradient(160deg, rgba(2, 2, 2, 0.55) 0%, rgba(0, 0, 0, 0.82) 100%),
-                url("imagens/home-hd-calhas.jpg");
-            background-position: 10% 70%;
-            background-repeat: no-repeat;
-            background-size: cover;
-            min-height: 100vh;
-            padding-top: 72px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding-inline: var(--container-pad);
-            text-align: center;
-        }
-
-        .hero h1 {
-            color: white;
-            font-size: clamp(2.4rem, 6.5vw, 5rem);
-            letter-spacing: -0.04em;
-            line-height: 1.08;
-            margin: 0 0 var(--space-sm);
-            max-width: 800px;
-            font-weight: 700;
-        }
-
-        .hero h1 em {
-            font-style: normal;
-            font-weight: 700;
-            background: linear-gradient(135deg, #a5b4fc, var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero p {
-            font-family: "Outfit", sans-serif;
-            font-size: clamp(1rem, 2.2vw, 1.2rem);
-            color: var(--cinza-claro);
-            margin: 0 0 var(--space-lg);
-            max-width: 520px;
-            line-height: 1.6;
-        }
-
-        .hero span {
-            color: var(--azul-claro);
-        }
 
         .botoes {
             display: flex;
@@ -370,8 +253,8 @@
         }
 
         .titulo {
-            display: block;
-            margin-left: 7%;
+            max-width: var(--container-max);
+            margin-inline: auto;
         }
 
         .descricao {
@@ -459,37 +342,6 @@
             min-height: auto;
         }
 
-        /* ── FOOTER ──────────────────────────────────────────── */
-        footer {
-            background: var(--azul-principal);
-            color: white;
-            text-align: center;
-            padding: var(--space-lg) var(--container-pad);
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: var(--space-sm);
-            border-top: 1px solid rgba(255, 255, 255, 0.07);
-            margin-top: auto;
-        }
-
-        footer p {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin: 0;
-            font-size: 0.95rem;
-            color: var(--cinza-claro);
-        }
-
-        footer img {
-            width: 20px;
-            height: 20px;
-            object-fit: contain;
-            flex-shrink: 0;
-        }
 
         #rain {
             position: fixed;
@@ -497,6 +349,49 @@
             left: 0;
             z-index: -1;
             pointer-events: none;
+        }
+
+        svg {
+            width: 4rem;
+            height: 4rem;
+            fill: white;
+        }
+
+        .whatsapp {
+            background-color: rgba(6, 113, 189, 0.562);
+            backdrop-filter: blur(10px);
+            width: 5rem;
+            height: 5rem;
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            border-radius: 50%;
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.18);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease;
+            opacity: 0;
+            visibility: hidden;
+
+            transform: translateY(20px);
+        }
+
+        .whatsapp.show {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+            transition:
+                opacity .25s ease,
+                transform .25s ease;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.03);
         }
 
         /* ── RESPONSIVE ──────────────────────────────────────── */
@@ -593,15 +488,11 @@
 
 <body>
     <header>
-        <div class="logo">
-            <img src="imagens/francino-calhas-logo.png" alt="Logo Francino Calhas">
-            <span>Francino Calhas</span>
-        </div>
-
+        <img src="imagens/francino.png" alt="Logo Francino Calhas">
         <nav id="main-nav">
-            <a href="#inicio">Início</a>
+            <a href="index.html">Início</a>
             <a href="#empresa">A empresa</a>
-            <a href="#servico">Serviços</a>
+            <a href="servico.html">Instagram</a>
             <a href="https://wa.me/553185929831" target="_blank" rel="noopener noreferrer">Contato</a>
         </nav>
 
@@ -613,12 +504,10 @@
     </header>
 
     <section id="inicio">
-        <div class="hero">
-            <h1>Calhas, coifas,
-                <br>e <span>rufos</span> sob medida.
+        <div class="hero" id = "hero">
+            <h1>Braseiros, grills,
+                <br>e <span>coifas</span> sob medida.
             </h1>
-            <p>Melhor preço de Belo Horizonte,
-                cobrimos qualquer orçamento.</p>
             <div class="botoes">
                 <a href="https://wa.me/553185929831" target="_blank" rel="noopener noreferrer">
                     <button class="orcamento">Pedir orçamento</button>
@@ -681,6 +570,34 @@
             </p>
 
             <main class="cards-grid">
+
+                <div class="menu">
+                    <div class="slider">
+                        <div class="slides">
+                            <img src="imagens/coifa02.jpg" alt="Coifa 1">
+                            <img src="imagens/coifa04.jpg" alt="Coifa 2">
+                            <img src="imagens/coifa03.png" alt="Coifa 3">
+                        </div>
+                    </div>
+                    <div class="linha"></div>
+                    <h3>Coifas</h3>
+                    <p>Coifas industriais e residenciais sob medida</p>
+                </div>
+
+
+                <div class="menu">
+                    <div class="slider">
+                        <div class="slides">
+                            <img src="imagens/rufos1.png" alt="Rufo 1">
+                            <img src="imagens/rufo02.jpg" alt="Rufo 2" style="border-radius: 0;">
+                            <img src="imagens/rufos3.png" alt="Rufo 3">
+                        </div>
+                    </div>
+                    <div class="linha"></div>
+                    <h3>Grill</h3>
+                    <p>Vedação e proteção para telhados e fachadas</p>
+                </div>
+
                 <div class="menu">
                     <div class="slider">
                         <div class="slides">
@@ -703,59 +620,30 @@
                         </div>
                     </div>
                     <div class="linha"></div>
-                    <h3>Calhas</h3>
+                    <h3>Calhas e rufos</h3>
                     <p>Calhas de alumínio, PVC e aço galvanizado</p>
                 </div>
 
-                <div class="menu">
-                    <div class="slider">
-                        <div class="slides">
-                            <img src="imagens/rufos1.png" alt="Rufo 1">
-                            <img src="imagens/rufo02.jpg" alt="Rufo 2" style="border-radius: 0;">
-                            <img src="imagens/rufos3.png" alt="Rufo 3">
-                        </div>
-                    </div>
-                    <div class="linha"></div>
-                    <h3>Rufos</h3>
-                    <p>Vedação e proteção para telhados e fachadas</p>
-                </div>
 
-                <div class="menu">
-                    <div class="slider">
-                        <div class="slides">
-                            <img src="imagens/coifa02.jpg" alt="Coifa 1">
-                            <img src="imagens/coifa04.jpg" alt="Coifa 2">
-                            <img src="imagens/coifa03.png" alt="Coifa 3">
-                        </div>
-                    </div>
-                    <div class="linha"></div>
-                    <h3>Coifas</h3>
-                    <p>Coifas industriais e residenciais sob medida</p>
-                </div>
             </main>
         </div>
     </section>
+
+    <a class="whatsapp" href="https://wa.me/553185929831" target="_blank" rel="noopener noreferrer" id="whatsapp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <path
+                d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z" />
+        </svg>
+    </a>
 
     <footer>
         <p><img src="imagens/loc.png" alt="Localização">Av. Saramenha 610, Guarani, Belo Horizonte</p>
         <p><img src="imagens/telefone.png" alt="Telefone">(31) 98592-9831</p>
     </footer>
-
-    <script>
-        // Hamburger menu
-        const hamburger = document.getElementById('hamburger');
-        const nav = document.getElementById('main-nav');
-
-        hamburger.addEventListener('click', () => {
-            nav.classList.toggle('open');
-        });
-
-        // Close nav on link click (mobile)
-        nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => nav.classList.remove('open'));
-        });
-
-    </script>
 </body>
+
+
+<script src="js/js.js">
+</script>
 
 </html>

@@ -1,73 +1,84 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8" />
-    <title>Francino Calhas</title>
-    <link rel="stylesheet" href="css.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Francino</title>
+    <link rel="stylesheet" href="css/css.css">
     <meta property="og:image"
         content="https://francinocalhas.com.br/wp-content/uploads/2023/04/francino-calhas-logo.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="imagens/francino-calhas-logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="imagens/logo2.png">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
 
-        body {
-            background: linear-gradient(135deg, #141414, #141414);
-            background-repeat: no-repeat;
-            margin: 0;
-            padding: 0;
-            background-attachment: fixed;
-            min-height: 100%;
+
+        /* ── HEADER ─────────────────────────────────────────── */
+
+
+        .logo {
             display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            font-family: "DM Sans", "Inter", sans-serif;
-
-        }
-
-        header {
-            background: var(--azul-principal);
-            backdrop-filter: blur(10px);
-            background-position: center;
-            background-size: cover;
-            top: 0;
-            width: 100%;
-            height: 80px;
-            position: fixed;
-            display: flex;
-            justify-content: space-between;
-            z-index: 10;
-        }
-
-        header h1 {
-            color: White;
+            align-items: center;
+            gap: 10px;
+            color: white;
             font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: -0.01em;
+            flex-shrink: 0;
+        }
+
+
+
+        /* hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: white;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        /* ── HERO ────────────────────────────────────────────── */
+        #inicio {
+            padding: 0;
         }
 
         .hero {
-            background: linear-gradient(135deg, rgba(2, 2, 2, 0.4), rgba(0, 0, 0, 0.8)), url("imagens/home-hd-calhas.jpg");
-            background-position: 1% 90%;
+            background: linear-gradient(160deg, rgba(2, 2, 2, 0.55) 0%, rgba(0, 0, 0, 0.82) 100%),
+                url("imagens/hero.jpeg");
+            background-position: 10% 55%;
             background-repeat: no-repeat;
             background-size: cover;
-            min-height: 80vh;
-            padding-top: 80px;
-            align-content: center;
+            min-height: 100vh;
+            padding-top: 72px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-inline: var(--container-pad);
+            text-align: center;
         }
 
-        .hero h1,
-        .hero p {
+        .hero h1 {
             color: white;
-            text-align: center;
-            z-index: 2;
-            font-size: clamp(2.4rem, 7vw, 5.2rem);
+            font-size: clamp(2.4rem, 6.5vw, 5rem);
             letter-spacing: -0.04em;
-            line-height: 1.07;
-            margin-bottom: 1%;
+            line-height: 1.08;
+            margin: 0 0 var(--space-sm);
+            max-width: 800px;
+            font-weight: 700;
         }
 
         .hero h1 em {
@@ -80,91 +91,41 @@
         }
 
         .hero p {
-            font-family: "Inter", sans-serif;
-            font-size: 1.8rem;
+            font-family: "Outfit", sans-serif;
+            font-size: clamp(1rem, 2.2vw, 1.2rem);
             color: var(--cinza-claro);
-            margin-top: 20px;
-            font-size: clamp(1rem, 2vw, 1.2rem);
-
-            animation: fadeUp .7s .16s ease both;
+            margin: 0 0 var(--space-lg);
+            max-width: 520px;
+            line-height: 1.6;
         }
 
         .hero span {
             color: var(--azul-claro);
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: white;
-            font-weight: 700;
-        }
-
-        .logo img {
-            margin-left: 20px;
-            height: 40px;
-        }
-
-        nav {
-            align-items: center;
-            display: flex;
-            gap: 30px;
-            margin-right: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--cinza-claro);
-            font-weight: 500;
-            transition: 0.3s;
-            position: relative;
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 500;
-
-        }
-
-        nav a::after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--cinza-claro);
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: white;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
         .botoes {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
-            align-items: center;
-            max-width: 400px;
-            margin: 25px auto;
+            gap: 14px;
+        }
+
+        .botoes a {
+            text-decoration: none;
         }
 
         .botoes button {
-            border-radius: 10px;
+            border-radius: var(--radius-sm);
             min-height: 52px;
-            padding: 0 28px;
+            padding: 0 32px;
             font-family: 'Outfit', sans-serif;
             font-size: 0.95rem;
             font-weight: 600;
             letter-spacing: 0.02em;
             cursor: pointer;
-            transition: all .2s;
-            position: relative;
-            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            white-space: nowrap;
+            min-width: 160px;
         }
 
         .botoes button:hover {
@@ -175,185 +136,92 @@
             background: linear-gradient(160deg, var(--azul-secundario), #185381);
             color: white;
             border: none;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(21, 101, 192, 0.35);
         }
 
         .orcamento:hover {
-            box-shadow: 0 0 0 4px #062238;
+            box-shadow: 0 0 0 4px rgba(21, 101, 192, 0.3), 0 4px 20px rgba(21, 101, 192, 0.35);
         }
 
         .verproduto {
-            background: linear-gradient(160deg, rgb(26, 26, 26, 0.9), rgb(36, 36, 36, 0.9));
+            background: rgba(30, 30, 30, 0.9);
             color: white;
-            border: 2px solid var(--border);
+            border: 1.5px solid var(--border);
         }
 
         .verproduto:hover {
-            background: linear-gradient(160deg, rgb(36, 36, 36), rgb(46, 46, 46));
+            background: rgba(50, 50, 50, 0.9);
         }
 
-        main {
-            justify-content: center;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 5%;
-            flex: 1;
-            padding: 40px 100px;
-            flex-wrap: wrap;
-            max-width: 1000px;
-            margin: 0 auto;
+        /* ── SECTIONS SHARED ─────────────────────────────────── */
+        section {
+            padding-block: var(--space-2xl);
+            padding-inline: var(--container-pad);
         }
 
-        .menu:nth-child(odd) {
-            justify-self: start;
+        .section-inner {
+            max-width: var(--container-max);
+            margin-inline: auto;
         }
 
-        .menu:nth-child(even) {
-            justify-self: end;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 0 20px;
-            }
-
-            nav {
-                gap: 15px;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero h2 {
-                font-size: 1.2rem;
-            }
-
-            main {
-                grid-template-columns: 1fr;
-            }
-
-            main {
-                grid-template-columns: 1fr;
-            }
-
-            .menu {
-                justify-self: center !important;
-            }
-        }
-
-        section h2 {
-            font-size: clamp(1.7rem, 4vw, 2.8rem);
+        section>h2,
+        .section-inner>h2 {
+            font-size: clamp(1.7rem, 4vw, 2.6rem);
             font-weight: 700;
             letter-spacing: -0.035em;
             line-height: 1.15;
             color: #fff;
-            max-width: 640px;
-            margin-inline-start: 17.5%;
-            margin-bottom: 0;
-            margin-top: 0;
+            margin: 0 0 var(--space-xs);
         }
 
-        section h2 span {
+        section>h2 span,
+        .section-inner>h2 span {
             font-weight: 300;
         }
 
-        #servico h2 {
-            margin-top: 3%;
-        }
-
-        section h4 {
-            font-size: clamp(1.2rem, 2.3vw, 1.4rem);
-            font-weight: 50;
-            letter-spacing: -0.035em;
-            line-height: 1.15;
-            color: #fff;
-            max-width: 640px;
-            margin-inline-start: 17.5%;
-            margin-bottom: 0.7%;
-            font-family: 'Outfit', sans-serif;
-        }
-
-        section p {
-            font-family: "Inter", sans-serif;
-            font-size: 1.8rem;
+        section>p.intro,
+        .section-inner>p.intro {
+            font-family: "Outfit", sans-serif;
+            font-size: clamp(0.9rem, 1.8vw, 1.05rem);
             color: var(--cinza-claro);
-            font-size: clamp(0.8rem, 1.8vw, 1rem);
-            margin-top: 0;
-            margin-bottom: 1%;
-            margin-left: 17.5%;
-            margin-right: 17.5%;
-            text-align: left;
+            margin: 0 0 var(--space-lg);
+            max-width: 560px;
+            line-height: 1.6;
         }
 
+        /* ── SERVIÇOS ────────────────────────────────────────── */
+        #servico {
+            padding-bottom: var(--space-2xl);
+        }
+
+        #servico h2 {
+            margin-top: 0;
+        }
+
+        main.cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            max-width: var(--container-max);
+            margin-inline: auto;
+        }
 
         .menu {
-            background: linear-gradient(135deg, rgb(30, 58, 95, 0.7), rgb(43, 92, 138, 0.9));
-            max-width: 60rem;
-            min-height: 45rem;
-            max-width: 50rem;
-            width: 100%;
+            background: linear-gradient(135deg, rgba(30, 58, 95, 0.75), rgba(43, 92, 138, 0.9));
+            min-width: 0;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            gap: 10px;
-
-            border: solid 1px rgb(102, 99, 99);
-            border-radius: 1.25rem;
+            border: 1px solid rgba(102, 99, 99, 0.5);
+            border-radius: var(--radius-md);
             overflow: hidden;
-
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .menu:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-        }
-
-        .menu img {
-            width: 100%;
-            height: 70%;
-            position: relative;
-            object-fit: cover;
-        }
-
-        .menu h3 {
-            color: white;
-            font-size: 1.6rem;
-            font-weight: 600;
-            font-family: "DM Sans", sans-serif;
-            margin-bottom: 0;
-            margin-left: 5%;
-            margin-top: 2%;
-        }
-
-        .menu p {
-            font-family: "Inter", sans-serif;
-            color: var(--cinza-claro);
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            margin-top: -2%;
-            margin-left: 5%;
-            text-align: left;
-            margin-right: 10%;
-        }
-
-        .menu img,
-        .slides img {
-            border-top-left-radius: 0.75rem !important;
-            border-top-right-radius: 0.75rem !important;
-            border-bottom-left-radius: 0rem !important;
-            border-bottom-right-radius: 0rem !important;
-        }
-
-        .linha {
-            margin-top: -9px;
-            background-color: rgb(102, 99, 99);
-            height: 1px;
-            width: 120%;
-            position: relative;
-            justify-self: left;
-
+            transform: translateY(-6px) scale(1.015);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
         }
 
         .slider {
@@ -370,10 +238,34 @@
 
         .slides img {
             width: calc(100% / 3);
-            height: 290px;
+            height: 240px;
             object-fit: cover;
-            border-radius: 0.75rem;
             flex-shrink: 0;
+            border-top-left-radius: var(--radius-sm);
+            border-top-right-radius: var(--radius-sm);
+        }
+
+        .linha {
+            height: 1px;
+            background-color: rgba(102, 99, 99, 0.6);
+            width: 100%;
+        }
+
+        .menu h3 {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 600;
+            font-family: "Outfit", sans-serif;
+            margin: var(--space-md) var(--space-md) var(--space-xs);
+        }
+
+        .menu p {
+            font-family: "Outfit", sans-serif;
+            color: var(--cinza-claro);
+            font-size: 0.9rem;
+            margin: 0 var(--space-md) var(--space-md);
+            text-align: left;
+            line-height: 1.5;
         }
 
         @keyframes slide3 {
@@ -406,194 +298,351 @@
             }
         }
 
+        /* ── EMPRESA ─────────────────────────────────────────── */
+        #empresa {
+            background: linear-gradient(180deg, #0f1c2e 0%, #141414 100%);
+        }
+
+        .titulo {
+            display: block;
+            margin-left: 7%;
+        }
+
+        .descricao {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 5rem);
+            align-items: start;
+            max-width: var(--container-max);
+            margin-inline: auto;
+        }
+
+        .descricao-col {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .descricao h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--azul-claro);
+            margin: 0;
+        }
+
+        .descricao h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.12;
+            color: white;
+            margin: 0;
+        }
+
+        .descricao p {
+            font-family: "Outfit", sans-serif;
+            font-size: clamp(0.88rem, 1.6vw, 1rem);
+            color: var(--cinza-claro);
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        .descricao img {
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 520px;
+            height: auto;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            display: block;
+        }
+
+        .traco {
+            background: linear-gradient(90deg, var(--azul-claro), rgb(22, 94, 189));
+            width: 75px;
+            height: 3px;
+            border-radius: 3px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+
+        /* qualidades table → cards */
+        .qualidades-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: var(--space-sm);
+        }
+
+        .qualidade-item {
+            border-radius: var(--radius-sm);
+            border: 1.5px solid rgba(176, 190, 197, 0.25);
+            padding: var(--space-sm) var(--space-md);
+            font-family: 'Outfit', sans-serif;
+            background: rgba(26, 26, 26, 0.7);
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        #empresa .menu {
+            max-width: 100%;
+            min-height: auto;
+        }
+
+
         #rain {
             position: fixed;
             top: 0;
             left: 0;
             z-index: -1;
+            pointer-events: none;
         }
 
+        /* ── RESPONSIVE ──────────────────────────────────────── */
+        @media (max-width: 900px) {
+            .descricao {
+                grid-template-columns: 1fr;
+            }
 
-        .traco {
-            background: linear-gradient(var(--azul-claro), rgb(22, 94, 189));
-            width: 62%;
-            height: 1px;
-            margin-left: 17.5%;
+            .descricao img {
+                max-width: 100%;
+            }
         }
 
-        .descricao {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 5%;
-            padding: 50px 11%;
-            align-items: center;
+        @media (max-width: 640px) {
+            header {
+                padding-inline: 1.25rem;
+            }
+
+            nav {
+                display: none;
+                position: fixed;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: var(--azul-principal);
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                padding: 0.5rem 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            }
+
+            nav.open {
+                display: flex;
+            }
+
+            nav a {
+                width: 100%;
+                padding: 0.85rem 1.5rem;
+                font-size: 1rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            nav a::after {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            section {
+                padding-block: var(--space-xl);
+                padding-inline: 1.25rem;
+            }
+
+            .botoes {
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .botoes button {
+                width: 100%;
+                min-width: unset;
+            }
+
+            main.cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .slides img {
+                height: 200px;
+            }
+
+            .qualidades-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .descricao h2 {
+                font-size: 1.75rem;
+            }
         }
 
-        #empresa .menu {
-            max-width: 82%;
-            min-height: auto;
-        }
-
-        footer {
-            background: var(--azul-principal);
-            backdrop-filter: blur(10px);
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            width: 100%;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-
-        footer p {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-            font-size: 1rem;
-        }
-
-        footer img {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-            object-fit: contain;
+        @media (min-width: 641px) and (max-width: 900px) {
+            main.cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
 
 <body>
     <header>
-        <div class="logo">
-            <img src="imagens/francino-calhas-logo.png">
-            <span>Francino Calhas</span>
-        </div>
-
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#servico">Serviços</a>
+        <img src="imagens/francino.png" alt="Logo Francino Calhas">
+        <nav id="main-nav">
+            <a href="index.html">Início</a>
             <a href="#empresa">A empresa</a>
-            <a href="https:/wa.me/553185929831" target="_blank" rel="noopener noreferrer" id="contatobtn">Contato</a>
+            <a href="servico.html">Serviços</a>
+            <a href="https://wa.me/553185929831" target="_blank" rel="noopener noreferrer">Contato</a>
         </nav>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
     <section id="inicio">
         <div class="hero">
-            <H1>Calhas, coifas,
-                <br>e <span>rufos</span> sob medida.
+            <h1>Braseiros, grills,
+                <br>e <span>coifas</span> sob medida.
             </h1>
             <p>Melhor preço de Belo Horizonte,
                 cobrimos qualquer orçamento.</p>
             <div class="botoes">
-                <a href="https:/wa.me/553185929831" target="_blank" rel="noopener noreferrer" id="contatobtn">
-                    <button class="orcamento">Pedir orçamento</button></a>
+                <a href="https://wa.me/553185929831" target="_blank" rel="noopener noreferrer">
+                    <button class="orcamento">Pedir orçamento</button>
+                </a>
                 <button class="verproduto"
-                    onclick="document.getElementById('servico').scrollIntoView({behavior: 'smooth'})">Ver
-                    serviços</button>
+                    onclick="document.getElementById('servico').scrollIntoView({behavior: 'smooth'})">
+                    Ver serviços
+                </button>
             </div>
         </div>
-    </section>
-
-    <section id="servico">
-        <h2>Nossos serviços</h2>
-        <p>Trabalhamos com os melhores materiais<br> para garantir durabilidade e acabamento impecável.</p>
-
-        <!--
-            <canvas id="rain"></canvas>
-            -->
-
-        <main>
-            <div class="menu">
-                <div class="slider">
-                    <div class="slides">
-                        <img src="imagens/tubulacao1.png">
-                        <img src="imagens/tubulacao2.png">
-                        <img src="imagens/tubulacao3.png">
-                    </div>
-                </div>
-                <div class="linha"></div>
-                <h3>Tubulações</h3>
-                <p>Condutores verticais para escoamento eficiente</p>
-            </div>
-
-            <div class="menu">
-                <div class="slider">
-                    <div class="slides">
-                        <img src="imagens/calhas2.png">
-                        <img src="imagens/calhas-nova.png">
-                        <img src="imagens/calhas3.png">
-                    </div>
-                </div>
-                <div class="linha"></div>
-                <h3>Calhas </h3>
-                <p>Calhas de alumínio, PVC e aço galvanizado</p>
-            </div>
-
-
-            <div class="menu">
-                <div class="slider">
-                    <div class="slides">
-                        <img src="imagens/rufos1.png">
-                        <img src="imagens/rufo02.jpg" style="border-radius: 20px;">
-                        <img src="imagens/rufos3.png">
-                    </div>
-                </div>
-                <div class="linha"></div>
-                <h3>Rufos</h3>
-                <p>Vedação e proteção para telhados e fachadas</p>
-            </div>
-
-            <div class="menu">
-                <div class="slider">
-                    <div class="slides">
-                        <img src="imagens/coifa02.jpg" alt="Coifa 1">
-                        <img src="imagens/coifa04.jpg" alt="Coifa 2">
-                        <img src="imagens/coifa03.png" alt="Coifa 3">
-                    </div>
-                </div>
-                <div class="linha"></div>
-                <h3>Coifas</h3>
-                <p>Coifas industriais e residenciais sob medida</p>
-            </div>
-
-        </main>
     </section>
 
     <section id="empresa">
-
-        <div class="descricao">
-            <div>
-                <h4>A empresa</h4>
-                <h2>Francino Calhas</h2>
-                <div class="traco"></div>
-                <p>Entramos há <strong>10 anos</strong> no mercado para fazer a diferença e
-                    <strong>profissionalizar</strong><br> o segmento.<br>
-                    Somos uma empresa <strong>totalmente</strong> dedicada a oferecer <strong>soluções</strong><br>
-                    sob
-                    <strong>medida</strong> para nossos clientes,
-                    <br>prezamos
-                    pela
-                    <strong>excelência</strong> e entrega de valor.<br>
-                    Buscamos identificar e resolver <strong>problemas</strong>,<br> <strong>superando as
-                        expectativas</strong> de nossos clientes.
-                </p>
-            </div>
-
-            <div class="menu">
-                <img src="imagens/logo2.jpg">
-            </div>
-
+        <div class="titulo">
+            <h4>A empresa</h4>
+            <div class="traco"></div>
         </div>
+        <div class="descricao">
 
+            <div class="descricao-col">
+
+
+                <h2>Onde houver a nossa marca,
+                    a excelência é o padrão.
+                </h2>
+                <p>Entramos há <strong>10 anos</strong> no mercado para fazer a diferença e
+                    <strong>profissionalizar</strong> o segmento.
+                    Somos uma empresa <strong>totalmente</strong> dedicada a oferecer <strong>soluções</strong>
+                    sob <strong>medida</strong> para nossos clientes,
+                    prezamos pela <strong>excelência</strong> e entrega de valor.
+                    Buscamos identificar e resolver <strong>problemas</strong>,
+                    <strong>superando as expectativas</strong> de nossos clientes.
+                </p>
+                <img src="imagens/imagem1.jpg" alt="Francino Calhas - instalação">
+            </div>
+
+            <div class="descricao-col">
+                <h2>Engenharia metálica com acabamento profissional</h2>
+                <p>A Francino busca unir durabilidade, eficiência e atendimento especializado em projetos residenciais,
+                    comerciais e industriais.<br><br>
+                    <strong>Visão:</strong> Ser referência do segmento no mercado nacional<br>
+                    <strong>Valores:</strong> Gratidão · Ética · Comprometimento · Trabalho em equipe · Satisfação do
+                    cliente.
+                </p>
+
+                <div class="qualidades-grid">
+                    <div class="qualidade-item">Fabricação própria</div>
+                    <div class="qualidade-item">Equipe especializada</div>
+                    <div class="qualidade-item">Atendimento técnico</div>
+                    <div class="qualidade-item">Soluções sob medida</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-inner">
+            <h2>Nossos serviços</h2>
+            <p class="intro">Trabalhamos com os melhores materiais para garantir durabilidade e acabamento impecável.
+            </p>
+
+            <main class="cards-grid">
+                <div class="menu">
+                    <div class="slider">
+                        <div class="slides">
+                            <img src="imagens/tubulacao1.png" alt="Tubulação 1">
+                            <img src="imagens/tubulacao2.png" alt="Tubulação 2">
+                            <img src="imagens/tubulacao3.png" alt="Tubulação 3">
+                        </div>
+                    </div>
+                    <div class="linha"></div>
+                    <h3>Tubulações</h3>
+                    <p>Condutores verticais para escoamento eficiente</p>
+                </div>
+
+                <div class="menu">
+                    <div class="slider">
+                        <div class="slides">
+                            <img src="imagens/calhas2.png" alt="Calha 1">
+                            <img src="imagens/calhas-nova.png" alt="Calha 2">
+                            <img src="imagens/calhas3.png" alt="Calha 3">
+                        </div>
+                    </div>
+                    <div class="linha"></div>
+                    <h3>Calhas</h3>
+                    <p>Calhas de alumínio, PVC e aço galvanizado</p>
+                </div>
+
+                <div class="menu">
+                    <div class="slider">
+                        <div class="slides">
+                            <img src="imagens/rufos1.png" alt="Rufo 1">
+                            <img src="imagens/rufo02.jpg" alt="Rufo 2" style="border-radius: 0;">
+                            <img src="imagens/rufos3.png" alt="Rufo 3">
+                        </div>
+                    </div>
+                    <div class="linha"></div>
+                    <h3>Rufos</h3>
+                    <p>Vedação e proteção para telhados e fachadas</p>
+                </div>
+
+                <div class="menu">
+                    <div class="slider">
+                        <div class="slides">
+                            <img src="imagens/coifa02.jpg" alt="Coifa 1">
+                            <img src="imagens/coifa04.jpg" alt="Coifa 2">
+                            <img src="imagens/coifa03.png" alt="Coifa 3">
+                        </div>
+                    </div>
+                    <div class="linha"></div>
+                    <h3>Coifas</h3>
+                    <p>Coifas industriais e residenciais sob medida</p>
+                </div>
+            </main>
+        </div>
     </section>
 
     <footer>
-        <p><img src="imagens/loc.png">Av. Saramenha 610, Guarani, Belo Horizonte</p>
-        <p><img src="imagens/telefone.png">Telefone: (31) 98592-9831</p>
+        <p><img src="imagens/loc.png" alt="Localização">Av. Saramenha 610, Guarani, Belo Horizonte</p>
+        <p><img src="imagens/telefone.png" alt="Telefone">(31) 98592-9831</p>
     </footer>
 </body>
+
+<script src="js/js.js">
+</script>
+
 
 </html>
