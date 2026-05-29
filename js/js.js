@@ -16,10 +16,11 @@ const hero = document.getElementById("hero");
 const whatsapp = document.getElementById("whatsapp");
 
 const observer = new IntersectionObserver(([entry]) => {
+    if (scroll)
     if (entry.isIntersecting) {
         whatsapp.classList.remove("show");
 
-    } else {
+    } else if (scrollY > 100) {
         whatsapp.classList.add("show");
     }
 },
