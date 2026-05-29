@@ -162,21 +162,45 @@ body {
 header {
     background: var(--azul-principal);
     backdrop-filter: blur(10px);
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+
     width: 100%;
     height: 72px;
-    position: fixed;
+
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
     padding: 0 var(--container-pad);
+
     z-index: 100;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
 }
 
 header img {
     width: 100%;
     max-width: 150px;
     height: auto;
+}
+
+@media (max-width: 640px) {
+    header {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+}
+
+@media (max-width: 640px) {
+    header {
+        width: calc(100%);
+
+        top: 0;
+        position: fixed;
+    }
 }
 
 nav {
@@ -243,7 +267,7 @@ nav a:hover::after {
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
-    padding-top: 72px;
+    padding-top: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -265,6 +289,8 @@ nav a:hover::after {
     margin: 0 0 var(--space-sm);
     max-width: 800px;
     font-weight: 700;
+    max-width: 340px;
+    margin-bottom: 32px;
 }
 
 .hero h1 em {
